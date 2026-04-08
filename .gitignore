@@ -37,3 +37,4 @@
 # Un-ignore only what belongs in the repo
 !.gitignore
 !headlamp.html
+!index.html
