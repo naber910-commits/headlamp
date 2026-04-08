@@ -1,0 +1,39 @@
+# ============================================================
+#  HEADLAMP — .gitignore
+#
+#  This repo uses a WHITELIST strategy: everything is ignored
+#  by default, and only headlamp.html is explicitly allowed.
+#
+#  WHY ONLY headlamp.html?
+#    The built file is the app. It is fully self-contained —
+#    all Bible data, recommendations, and code are embedded.
+#    Source files (app_template.html, build.py, fetch_*.py,
+#    gospel_stories.json, etc.) contain no user-facing logic
+#    that isn't already in the built output, and the fetch
+#    scripts require API keys that should never be shared.
+#
+#  WHAT IS KEPT OUT:
+#    .env                  — your API keys. NEVER commit.
+#    app_template.html     — source template (build input)
+#    build.py / fetch_*.py — build + fetch scripts
+#    *.json (data files)   — large build-time data
+#    .gemini_cache/        — Gemini API response cache
+#    .esv_cache/           — ESV API response cache
+#    bible-data/           — raw per-book JSON source files
+#    bible-data.worktrees/ — Copilot worktree artefact
+#    __pycache__ / *.pyc   — Python bytecode
+#    .DS_Store             — macOS Finder metadata
+#
+#  GITHUB PAGES:
+#    headlamp.html will be served at:
+#      https://<you>.github.io/headlamp/headlamp.html
+#    To serve it at the root URL, also commit an index.html
+#    that redirects:  <meta http-equiv="refresh" content="0;url=headlamp.html">
+# ============================================================
+
+# Ignore everything by default
+*
+
+# Un-ignore only what belongs in the repo
+!.gitignore
+!headlamp.html
